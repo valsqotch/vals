@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="timer.css"/>
+    </head>
+    <body style="background-color:dimgrey">
+        <div id="dogdiv" >
+        </div>
+        <div id="d3">
+            <button id="pau" onclick="pause()">pause</button>
+            <script>
+                var paused = new Boolean(false);
+                paused=false;
+                function pause(){
+                    if(paused){
+                        paused=false;
+                        document.getElementById("pau").innerText = "pause";
+                    }
+                    else{
+                        paused=true;
+                        document.getElementById("pau").innerText = "resume";
+                    }  
+                }
+            </script>
+            <form>
+                <label for="clock" style="color:white ;">Time(s)</label>
+                <input type="number" id="clock" name="whatever" value="180">
+            </form>
+            <button id="apply" onclick="apply()">apply</button>
+            <script>
+                var time = document.getElementById("clock");
+                function apply(){
+                    console.log(time.value);
+                    min=parseInt(time.value/60);
+                    sec=time.value%60;
+                    m=time.value;
+                }
+            </script>
+            
+        </div>
+        <div id="d1">
+            <div id="btn"></div>
+            <div id="d2">
+                <p id="t1">3:00</p>
+            </div>
+            <audio id="a1">
+                <source src="pg.wav">
+            </audio>
+        </div>
+        <script src="timer.js"></script>
+        <script>
+            console.log(window.outerWidth);
+        </script>
+    </body>
